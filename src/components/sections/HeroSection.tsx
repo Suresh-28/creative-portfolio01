@@ -1,0 +1,81 @@
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, Sparkles } from 'lucide-react';
+
+const HeroSection: React.FC = () => {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-primary rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-secondary rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/30 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="h-full w-full" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      {/* Floating Badge */}
+      <Badge 
+        variant="outline" 
+        className="absolute top-32 right-32 pulse-glow border-primary/50 bg-primary/10 text-primary hover-bounce"
+      >
+        <Sparkles className="w-3 h-3 mr-1" />
+        Available for Hire
+      </Badge>
+
+      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
+        {/* Main Headline */}
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight">
+          <span className="stagger-item block gradient-text">Crafting</span>
+          <span className="stagger-item block">Ideas Into</span>
+          <span className="stagger-item block gradient-text">Experiences</span>
+        </h1>
+
+        {/* Subheading */}
+        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto stagger-item">
+          Creative developer & designer passionate about building digital experiences 
+          that inspire, engage, and tell meaningful stories through code and design.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center stagger-item">
+          <Button 
+            size="lg" 
+            className="group bg-gradient-primary hover:shadow-glow text-white border-0 px-8 py-6 text-lg hover-lift"
+          >
+            View My Work
+            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="group border-primary/50 hover:bg-primary/10 hover:border-primary px-8 py-6 text-lg hover-glow"
+          >
+            Let's Connect
+            <Sparkles className="ml-2 w-5 h-5 transition-transform group-hover:rotate-12" />
+          </Button>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 stagger-item">
+          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-bounce"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;

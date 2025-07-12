@@ -88,7 +88,7 @@ const HeroSection: React.FC = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="group border-primary/50 hover:bg-primary/10 hover:border-primary px-8 py-6 text-lg hover-glow ml-12"
+                className="group border-primary/50 hover:bg-primary/10 hover:border-primary px-8 py-6 text-lg hover-glow ml-16"
               >
                 Let's Connect
                 <Sparkles className="ml-2 w-5 h-5 transition-transform group-hover:rotate-12" />
